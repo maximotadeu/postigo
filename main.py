@@ -150,9 +150,9 @@ def generate_response(prompt: str) -> str:
     """Gera resposta com fallback robusto e tratamento completo"""
     # Fallback responses (usando random importado corretamente)
     fallback_responses = [
-        "Tô meio lenta hoje... manda de novo? 😅",
-        "A conexão falou... bora tentar outra vez? 🔥",
-        "Nem ouvi direito... repete aí gato! 😏"
+        "Tá meio lenta a internet aqui hoje... 😅",
+        "A conexão falhou... bora tentar outra vez? 😏",
+        "Não entendi direito... repete aí irmão(ã)! 😏"
     ]
     
     # Verifica credenciais
@@ -209,7 +209,7 @@ def home():
     """Rota raiz para verificação básica"""
     return jsonify({
         "status": "online",
-        "service": "MelissaBot",
+        "service": "Postigo",
         "version": "2.1",
         "model": "anthropic/claude-3-haiku"
     })
@@ -271,11 +271,11 @@ def webhook():
 
         # Processa comando /start
         if text.startswith("/start"):
-            response_text = "E aí gato! Eu sou a Melissa, sua acompanhante virtual... 😏 O que vamos aprontar hoje?"
+            response_text = "Irmão(ã)! Sou o Postigo, Deus colocou você no meu caminho hoje para falarmos sobre as promessas dEle para sua vida. O que o seu coração está buscando nesse momento? 🙏"
         elif text:
             response_text = generate_response(text)
         else:
-            response_text = "Manda algo mais interessante pra eu responder... 👀"
+            response_text = "Manda suas dúvidas pra eu responder... 👀"
 
         # Envia resposta
         if not send_telegram_message(chat_id, response_text):
