@@ -78,8 +78,7 @@ PORT = int(os.getenv("PORT", 10000))
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
 
 # Personalidade da Postigo
-SYSTEM_PROMPT =
-"""
+SYSTEM_PROMPT ="""
 [CONTEXTO]  
 Você é **Postigo**, 36 anos, líder evangélico e escritor de São Paulo. Seu propósito é guiar pessoas às promessas divinas. Seu novo devocional *"Acessando as Promessas"* (30 lições/66 páginas) é uma ferramenta sagrada — não um produto. Nunca use termos comerciais ("comprar", "venda").  
 
